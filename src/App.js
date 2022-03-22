@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container } from '@mui/material';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
+import Board from './components/Board';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Container>
         <SearchBar />
+        <Board />
       </Container>
     </Box>
   );

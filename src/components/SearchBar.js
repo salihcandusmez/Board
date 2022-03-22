@@ -12,7 +12,7 @@ export default function SearchBar() {
   const [authorName] = React.useState('Lorem Board');
 
   return (
-    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2, sm: 2, md: 3 }}>
+    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2, sm: 2, md: 2 }}>
       <Typography variant="h4" sx={{ color: '#707090' }}>
         {authorName}
       </Typography>
