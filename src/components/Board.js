@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { CardContent, Typography } from '@mui/material';
+import BookCard from './BookCard';
 
 export default function Board() {
   const [topColor, setTopColor] = React.useState('');
@@ -21,13 +22,15 @@ export default function Board() {
       <Typography variant="h5" sx={{ color: '#707090' }} gutterBottom>
         {boardTitle}
       </Typography>
+      <BookCard />
     </>
   );
 
   return (
     <Box
       sx={{
-        marginTop: 8
+        marginTop: 7,
+        maxWidth: 350
       }}>
       <Card
         variant="outlined"
