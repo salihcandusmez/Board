@@ -12,7 +12,8 @@ import layersLogo from '../assets/layers.png';
 import studyLogo from '../assets/study.png';
 
 const ExpandMore = styled((props) => {
-  const { ...other } = props;
+  // eslint-disable-next-line no-unused-vars
+  const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
@@ -36,11 +37,7 @@ export default function BookCard() {
           Unfinished tales of Numenor and Middle-earth
         </Typography>
 
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more">
+        <ExpandMore expand={expanded} onClick={handleExpandClick}>
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
@@ -58,7 +55,7 @@ export default function BookCard() {
 
           <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ marginTop: 3.4 }}>
             <Chip
-              avatar={<Avatar alt="Natacha" src={layersLogo} />}
+              avatar={<Avatar alt="Natacha" sx={{ width: 4, height: 4 }} src={layersLogo} />}
               label="123 Pages"
               sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
               variant="outlined"

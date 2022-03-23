@@ -40,11 +40,11 @@ const CustomButton = styled(Button)({
   }
 });
 
-export default function SubmitButton() {
+export default function SubmitButton({ onClick }) {
   const { t } = useTranslation();
 
   return (
-    <CustomButton variant="contained" disableRipple>
+    <CustomButton variant="contained" disableRipple onClick={onClick}>
       {t('submit')}
     </CustomButton>
   );
