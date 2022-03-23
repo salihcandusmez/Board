@@ -23,7 +23,7 @@ const ExpandMore = styled((props) => {
   })
 }));
 
-export default function BookCard() {
+export default function BookCard({ name, editionCount, firstPublishYear, pages, readTime }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -34,7 +34,7 @@ export default function BookCard() {
     <Card variant="outlined" sx={{ background: '#F4F4F4', border: 0 }}>
       <CardActions disableSpacing>
         <Typography variant="subtitle1" sx={{ color: '#707090' }} gutterBottom>
-          Unfinished tales of Numenor and Middle-earth
+          {name && name}
         </Typography>
 
         <ExpandMore expand={expanded} onClick={handleExpandClick}>
@@ -44,28 +44,36 @@ export default function BookCard() {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }}>
-            <Chip
-              sx={{ background: '#82C786', borderRadius: '3px', color: '#ffffff', height: 27 }}
-              label={'6 addition'}
-            />
-            <Typography variant="body1" sx={{ color: '#AAAAAA', alignSelf: 'center' }}>
-              First Published: 1965
-            </Typography>
+            {Boolean(editionCount) && (
+              <Chip
+                sx={{ background: '#82C786', borderRadius: '3px', color: '#ffffff', height: 27 }}
+                label={`${editionCount} addition`}
+              />
+            )}
+            {firstPublishYear && (
+              <Typography variant="body1" sx={{ color: '#AAAAAA', alignSelf: 'center' }}>
+                First Published: {firstPublishYear}
+              </Typography>
+            )}
           </Stack>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ marginTop: 3.4 }}>
-            <Chip
-              avatar={<Avatar alt="Natacha" sx={{ width: 4, height: 4 }} src={layersLogo} />}
-              label="123 Pages"
-              sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
-              variant="outlined"
-            />
-            <Chip
-              avatar={<Avatar alt="Natacha" src={studyLogo} />}
-              label="32 hours read time"
-              sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
-              variant="outlined"
-            />
+            {pages && (
+              <Chip
+                avatar={<Avatar alt="layer logo" sx={{ width: 4, height: 4 }} src={layersLogo} />}
+                label={`${pages} pages`}
+                sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
+                variant="outlined"
+              />
+            )}
+            {readTime && (
+              <Chip
+                avatar={<Avatar alt="study logo" src={studyLogo} />}
+                label={`${readTime} hours read time`}
+                sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
+                variant="outlined"
+              />
+            )}
           </Stack>
         </CardContent>
       </Collapse>

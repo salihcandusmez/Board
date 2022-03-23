@@ -1,7 +1,8 @@
-import { FETCH_AUTHOR } from '../types';
+import { FETCH_AUTHOR, FETCHING_AUTHOR } from '../types';
 
 const initialState = {
-  data: {},
+  books: {},
+  authorName: '',
   loading: false
 };
 
@@ -41,10 +42,16 @@ function parseBooksByYear(books) {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
+    case FETCHING_AUTHOR:
+      return {
+        ...state,
+        loading: true
+      };
     case FETCH_AUTHOR:
       return {
         ...state,
-        data: parseBooksByYear(payload),
+        books: parseBooksByYear(payload),
+        authorName: payload && payload[0]?.author_name[0],
         loading: false
       };
 

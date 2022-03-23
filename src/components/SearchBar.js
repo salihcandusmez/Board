@@ -5,21 +5,21 @@ import { TextField, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import SubmitButton from './SubmitButton';
 import { fetchAuthor } from '../store/actions/author.action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function SearchBar() {
+  const authorName = useSelector((state) => state.author.authorName);
+
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-
-  const [authorName] = React.useState('Lorem Board');
 
   const [authorId, setAuthorId] = React.useState('');
 
   const handleClick = () => {
     dispatch(fetchAuthor(authorId));
 
-    setAuthorId('');
+    // setAuthorId('');
   };
 
   return (
