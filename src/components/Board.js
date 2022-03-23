@@ -12,7 +12,7 @@ export default function Board({ year, books }) {
     setTopColor(`#${randomColor}`);
   }, []);
 
-  const card = (
+  const boardContent = (
     <>
       <Typography variant="h5" sx={{ color: '#707090' }} gutterBottom>
         {year}
@@ -33,7 +33,7 @@ export default function Board({ year, books }) {
       <Card
         variant="outlined"
         sx={{ background: '#D2D7E0', border: 0, borderTop: 4, borderTopColor: topColor }}>
-        <CardContent>{card}</CardContent>
+        <CardContent>{boardContent}</CardContent>
       </Card>
     </Box>
   );

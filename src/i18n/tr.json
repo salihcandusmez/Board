@@ -5,5 +5,6 @@
   "totalPages": "sayfa",
   "hoursReadTime": "okuma saati",
   "bookAddition": "ekleme",
-  "loading": "Yükleniyor ..."
+  "loading": "Yükleniyor ...",
+  "noBoard": "Herhangi bir sonuç bulunamadı"
 }

@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 
 const getTitle = (title, truncated, chars = 30) => {
   if (truncated && title.length > chars) {
-    return `${title.substring(0, chars)}...`;
+    return `${title.substring(0, chars)} ...`;
   }
 
   return title;
