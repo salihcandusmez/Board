@@ -13,7 +13,7 @@ function App() {
   const renderBoards = () => {
     let boards = [];
     for (const [key, value] of Object.entries(bookData)) {
-      boards.push(<Board year={key} books={value} />);
+      boards.push(<Board year={key} books={value} key={key} />);
     }
     return boards;
   };

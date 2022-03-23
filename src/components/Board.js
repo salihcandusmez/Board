@@ -19,7 +19,7 @@ export default function Board({ year, books }) {
       </Typography>
       <Stack spacing={2}>
         {books.map((val, ind) => (
-          <BookCard key={ind} {...val} />
+          <BookCard key={`${year}_${ind}`} {...val} />
         ))}
       </Stack>
     </>

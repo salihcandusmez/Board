@@ -24,8 +24,7 @@ function parseBooksByYear(books) {
       book.title,
       book.edition_count,
       book.first_publish_year,
-      book.number_of_pages_median,
-      book.re
+      book.number_of_pages_median
     );
 
     book.publish_year?.forEach((year) => {
