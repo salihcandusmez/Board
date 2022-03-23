@@ -1,4 +1,9 @@
 {
   "booksOf": "kitabın",
-  "submit": "Gönder"
+  "submit": "Gönder",
+  "firstPublishYear": "İlk Yayın Tarihi",
+  "totalPages": "sayfa",
+  "hoursReadTime": "okuma saati",
+  "bookAddition": "ekleme",
+  "loading": "Yükleniyor ..."
 }

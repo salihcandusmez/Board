@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import { Avatar, Chip, Stack } from '@mui/material';
 import layersLogo from '../assets/layers.png';
 import studyLogo from '../assets/study.png';
+import { useTranslation } from 'react-i18next';
 
 const ExpandMore = styled((props) => {
   // eslint-disable-next-line no-unused-vars
@@ -24,6 +25,8 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function BookCard({ name, editionCount, firstPublishYear, pages, readTime }) {
+  const { t } = useTranslation();
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -47,12 +50,12 @@ export default function BookCard({ name, editionCount, firstPublishYear, pages, 
             {Boolean(editionCount) && (
               <Chip
                 sx={{ background: '#82C786', borderRadius: '3px', color: '#ffffff', height: 27 }}
-                label={`${editionCount} addition`}
+                label={`${editionCount} ${t('bookAddition')}`}
               />
             )}
             {firstPublishYear && (
               <Typography variant="body1" sx={{ color: '#AAAAAA', alignSelf: 'center' }}>
-                First Published: {firstPublishYear}
+                {t('firstPublishYear')}: {firstPublishYear}
               </Typography>
             )}
           </Stack>
@@ -61,7 +64,7 @@ export default function BookCard({ name, editionCount, firstPublishYear, pages, 
             {pages && (
               <Chip
                 avatar={<Avatar alt="layer logo" sx={{ width: 4, height: 4 }} src={layersLogo} />}
-                label={`${pages} pages`}
+                label={`${pages} ${t('totalPages')}`}
                 sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
                 variant="outlined"
               />
@@ -69,7 +72,7 @@ export default function BookCard({ name, editionCount, firstPublishYear, pages, 
             {readTime && (
               <Chip
                 avatar={<Avatar alt="study logo" src={studyLogo} />}
-                label={`${readTime} hours read time`}
+                label={`${readTime} ${t('hoursReadTime')}`}
                 sx={{ color: '#AAAAAA', fontSize: 14, border: 0 }}
                 variant="outlined"
               />

@@ -9,7 +9,7 @@ const CustomButton = styled(Button)({
   fontSize: 12,
   padding: '3px 12px',
   border: '1px solid',
-  lineHeight: 1.5,
+  lineHeight: 2,
   backgroundColor: '#373A3B',
   borderColor: '#373A3B',
   alignSelf: 'baseline',

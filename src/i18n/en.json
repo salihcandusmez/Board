@@ -1,4 +1,9 @@
 {
   "booksOf": "books of",
-  "submit": "Submit"
+  "submit": "Submit",
+  "firstPublishYear": "First Published",
+  "totalPages": "pages",
+  "hoursReadTime": "hours read time",
+  "bookAddition": "addition",
+  "loading": "Loading ..."
 }
