@@ -5,5 +5,6 @@
   "totalPages": "pages",
   "hoursReadTime": "hours read time",
   "bookAddition": "addition",
-  "loading": "Loading ..."
+  "loading": "Loading ...",
+  "noBoard": "There is no board to show"
 }

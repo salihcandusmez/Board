@@ -10,7 +10,7 @@ import { CssBaseline } from '@mui/material';
 ReactDOM.render(
   <Provider store={store}>
     <CssBaseline />
-    <App />
+    <App sx={{ background: '#FCFCFC' }} />
   </Provider>,
   document.getElementById('root')
 );

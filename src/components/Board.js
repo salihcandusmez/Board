@@ -28,8 +28,7 @@ export default function Board({ year, books }) {
   return (
     <Box
       sx={{
-        marginTop: 7,
-        maxWidth: 350
+        minWidth: 350
       }}>
       <Card
         variant="outlined"
