@@ -24,6 +24,14 @@ const ExpandMore = styled((props) => {
   })
 }));
 
+const getTitle = (title, truncated, chars = 30) => {
+  if (truncated && title.length > chars) {
+    return `${title.substring(0, chars)}...`;
+  }
+
+  return title;
+};
+
 export default function BookCard({ name, editionCount, firstPublishYear, pages, readTime }) {
   const { t } = useTranslation();
 
@@ -37,7 +45,7 @@ export default function BookCard({ name, editionCount, firstPublishYear, pages, 
     <Card variant="outlined" sx={{ background: '#F4F4F4', border: 0 }}>
       <CardActions disableSpacing>
         <Typography variant="subtitle1" sx={{ color: '#707090' }} gutterBottom>
-          {name && name}
+          {name && getTitle(name, !expanded, 30)}
         </Typography>
 
         <ExpandMore expand={expanded} onClick={handleExpandClick}>
